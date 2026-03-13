@@ -1,8 +1,11 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
 
-df = pd.read_csv("train.csv")
+
+caminho_csv = os.path.join(os.path.dirname(__file__), "train.csv")
+df = pd.read_csv(caminho_csv)
 
 df["Sex"] = df["Sex"].map({
     "male": "Homem",
@@ -27,10 +30,8 @@ print(df.isnull().mean() * 100)
 
 # LIMPEZA DE DADOS
 
-# remover coluna com muitos valores nulos
 df = df.drop(columns=["Cabin"])
 
-# remover linhas onde a idade é nula
 df = df.dropna(subset=["Age"])
 
 # ESTATÍSTICA DESCRITIVA
