@@ -153,6 +153,12 @@ sns.countplot(
 )
 
 axes[1].set_title("Sobrevivência por Classe")
+axes[1].set_xlabel("Classe")
+axes[1].set_ylabel("Numero de Passageiros")
+axes[0].set_title("Sobrevivência por Sexo")
+axes[0].set_xlabel("Sexo")
+axes[0].set_ylabel("Número de Passageiros")
+axes[0].legend(title="Situação")
 
 plt.tight_layout()
 plt.show()
